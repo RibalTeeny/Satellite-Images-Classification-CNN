@@ -118,7 +118,6 @@ class Model(pl.LightningModule):  # ResnetFPN
         self.test_pr_curve = torchmetrics.PrecisionRecallCurve(task="binary")
         self.test_auroc = torchmetrics.AUROC(task="binary")
 
-        # TODO: what is this?
         if batch_transform:
             self.__batch_transform = transforms.RandomChoice(
                 transforms=[
